@@ -4,9 +4,9 @@
 
 @section('main-bottom')
 
-<section class="container d-flex flex-wrap justify-content-between py-4">
+<section class="d-flex flex-wrap justify-content-between py-5">
     @foreach($serieslist as $singleserie)
-        <div class="d-flex series-container">
+        <div class="d-flex series-container align-items-center">
         
             <div class="image-container">
                 <img src="{{ $singleserie['thumb'] }}" alt="">
@@ -14,8 +14,14 @@
             <div class="title-container">
                 <p>{{ $singleserie['series'] }}</p>
             </div>
-        
-        
+        <div class="actions">
+             <a class="btn btn-sm btn-primary me-2" href="#">
+                View
+            </a>
+            <a class="btn btn-sm btn-success me-2">Edit</a>
+            <a class="btn btn-sm btn-warning me-2">Delete</a>
+        </div>
+            
         </div>
     @endforeach
 </section>
