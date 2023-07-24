@@ -11,13 +11,13 @@
     @yield('custom-scripts-head')
 </head>
 <body>
-    @include('partials.header')
+    
 
-    <main>
+   <main>
         
-    </main>
+        @yield('main-bottom')
+   </main>
 
-    @include('partials.footer')
-    @yield('custom-scripts-tail')
+
 </body>
 </html>
