@@ -15,11 +15,7 @@
                 <p>{{ $singleserie['series'] }}</p>
             </div>
         <div class="actions">
-             <a class="btn btn-sm btn-primary me-2" href="#">
-                View
-            </a>
-            <a class="btn btn-sm btn-success me-2">Edit</a>
-            <a class="btn btn-sm btn-warning me-2">Delete</a>
+             
         </div>
             
         </div>

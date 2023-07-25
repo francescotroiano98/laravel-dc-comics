@@ -1,29 +1,21 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+namespace Database\Seeders;
 
-use App\Http\Controllers\Admin\ComicController as AdminComicController;
+use App\Models\Comic;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-Route::get('admin/comics', [AdminComicController::class, 'index'])->name('admin.comics.index');
-Route::get('admin/comics/{id}', [AdminComicController::class, 'show'])->name('admin.comics.show');
-
-Route::get('/', function () {
-   
-$data = [
-
-        'serieslist' => [
-           
+class ComicSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $comicList = [
             [
                 "title" => "Action Comics #1000: The Deluxe Edition",
                 "description" => "The celebration of 1,000 issues of Action Comics continues with a new, Deluxe Edition of the amazing comic that won raves when it hit comics shops in April! This hardcover includes all the stories from that issue, plus the tale by writer Paul Levitz and artist Neal Adams that appeared in the Action Comics: 80 Years Of Superman hardcover, as well as all the variant covers, design sketches by Jim Lee for Superman’s new look, scripts for the stories, the original art from the lost story featuring art by Curt Swan and more! Plus: a complete reprint of the stories that started it all—the Superman stories Action Comics #1 and 2 from 1938!",
@@ -235,10 +227,20 @@ $data = [
                     "Joëlle Jones"
                 ],
             ],
-            ],        
-                
-            
-];
-return view('homepage', $data);
+        ];
 
-})->name('homepage');
+        foreach ($comicList as $comic) {
+            $newComic = new Comic();
+            $newComic->title = $comic['title'];
+            $newComic->description = $comic['description'];
+            $newComic->thumb = $comic['thumb'];
+            $newComic->price = $comic['price'];
+            $newComic->series = $comic['series'];
+            $newComic->sale_date = $comic['sale_date'];
+            $newComic->type = $comic['type'];
+            $newComic->artists = implode(" - ", $comic['artists']);
+            $newComic->writers =  implode(" - ", $comic['writers']);
+            $newComic->save();
+        }
+    }
+}
