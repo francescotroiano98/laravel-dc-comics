@@ -10,4 +10,8 @@ class Comic extends Model
     use HasFactory;
 
     protected $table = "comics";
+
+    protected $fillable = [
+        'title', 'description', 'thumb'
+    ];
 }
