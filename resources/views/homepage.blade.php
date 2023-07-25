@@ -1,7 +1,14 @@
 @extends('layouts.app')
 
 @section('title', 'Welcome')
+@section('main-top')
+<div class="text-center py-4">
+    <button type="button" class="btn btn-primary"><a href="{{ route('admin.comics.index')}}">GO TO ADMIN/COMICS </a></button>
 
+</div>
+
+
+@endsection
 @section('main-bottom')
 
 <section class="d-flex flex-wrap justify-content-between py-5">
@@ -19,7 +26,10 @@
         </div>
             
         </div>
+
+        
     @endforeach
+    
 </section>
     
 

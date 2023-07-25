@@ -12,8 +12,10 @@
 </head>
 <body>
     
-
+@include('partials.header')
    <main>
+        @yield('main-top')
+        @yield('main-top-content')
         @yield('main-content')
         @yield('main-bottom')
    </main>

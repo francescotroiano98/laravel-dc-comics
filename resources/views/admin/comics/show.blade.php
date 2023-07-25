@@ -1,16 +1,20 @@
 @extends('layouts.app')
 
 @section('title', 'Single comic page')
-
+@section('main-top-content')
+    <section class="container">
+        <div class="row">
+            <div class="col-12 comics-index">
+                <h1>
+                    Comic: {{ $comic->title }}
+                </h1>
+            </div>
+        </div>
+    </section>
+@endsection
 @section('main-content')
 <div class="container">
-    <div class="row">
-        <div class="col-12">
-            <h1>
-                Comic: {{ $comic->title }}
-            </h1>
-        </div>
-    </div>
+    
     <div class="row comics justify-content-around">
         <article class="card col-12 p-0 m-3">
 
