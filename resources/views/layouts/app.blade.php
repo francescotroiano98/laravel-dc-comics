@@ -14,7 +14,7 @@
     
 
    <main>
-   @yield('main-content')
+        @yield('main-content')
         @yield('main-bottom')
    </main>
 
