@@ -50,7 +50,9 @@
                                     href="{{ route('admin.comics.show', $comic->id) }}">
                                     View
                                 </a>
-                                <a class="btn btn-sm btn-success me-2">Edit</a>
+                                <a class="btn btn-sm btn-success me-2" href="{{ route('admin.comics.edit', $comic->id) }}">
+                                    Edit
+                                </a>
                                 <a class="btn btn-sm btn-warning me-2">Delete</a>
                             </td>
 
