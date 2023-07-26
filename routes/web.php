@@ -25,8 +25,10 @@ Route::name('admin.')->prefix('admin')->group( function(){
 
 });
 
-Route::get('admin/comics/{id}/edit', [AdminComicController::class, 'edit'])->name('admin.comics.edit');
+// Route::get('admin/comics/{id}/edit', [AdminComicController::class, 'edit'])->name('admin.comics.edit');
 
-Route::put('admin/comics/{id}', [AdminComicController::class, 'update'])->name('admin.comics.update');
+// Route::put('admin/comics/{id}', [AdminComicController::class, 'update'])->name('admin.comics.update');
+
+// Route::delete(/comics/{id}', [AdminComicController::class, 'destroy'])->name('admin.comics.destroy');
 
 
