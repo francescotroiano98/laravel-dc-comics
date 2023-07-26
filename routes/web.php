@@ -27,3 +27,6 @@ Route::name('admin.')->prefix('admin')->group( function(){
 
 Route::get('admin/comics/{id}/edit', [AdminComicController::class, 'edit'])->name('admin.comics.edit');
 
+Route::put('admin/comics/{id}', [AdminComicController::class, 'update'])->name('admin.comics.update');
+
+

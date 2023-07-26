@@ -11,7 +11,7 @@
             <h1>Update a new comic</h1>
         </div>
 
-        <form class="col-8" action="{{ route('admin.comics.store') }}" method="POST">
+        <form class="col-8" action="{{ route('admin.comics.update', $comic->id) }}" method="POST">
             @csrf
             @method('PUT')
 
@@ -52,7 +52,7 @@
                 <input type="text" class="form-control" id="writers" name="writers" value="{{ $comic->writers }}">
             </div>
 
-            <button type="submit" class="btn btn-primary">Create new comic</button>
+            <button type="submit" class="btn btn-primary">Update comic</button>
             <button type="reset" class="btn btn-warning">Reset fields</button>
         </form>
     </div>
