@@ -18,6 +18,7 @@
         @yield('main-top-content')
         @yield('main-content')
         @yield('main-bottom')
+        @yield('custom-scripts')
    </main>
 
 

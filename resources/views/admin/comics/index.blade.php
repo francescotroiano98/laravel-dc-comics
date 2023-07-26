@@ -4,12 +4,30 @@
 @section('main-top-content')
 <section class="container">
     <div class="row w-100">
-        <div class="col-12 comics-index d-flex justify-content-between align-items-center">
+        <div class="col-12 comics-index d-flex flex-wrap justify-content-between align-items-center">
             <h1>
                 Admin Comic Index Panel
             </h1>
             <button type="button" class="btn btn-light"><a href="{{ route('admin.comics.create')}}">Create New Comic</a></button>
-            
+            @if (session('delete'))
+            <div class="col-12">
+                <div class="alert alert-warning">
+                    {{ session('delete') }} has been deleted succesfully
+                </div>
+            </div>
+        @elseif ( session('created'))
+            <div class="col-12">
+                <div class="alert alert-primary">
+                    {{ session('created') }} has been created succesfully
+                </div>
+            </div>
+        @elseif ( session('restored'))
+            <div class="col-12">
+                <div class="alert alert-primary">
+                    {{ session('restored') }} has been restored succesfully
+                </div>
+            </div>
+        @endif
         </div>
     </div>
 </section>
@@ -72,4 +90,18 @@
 
     
 </div>
+@endsection
+@section('custom-scripts')
+    <script>
+        const deleteFormElements = document.querySelectorAll('form.form-terminator');
+        deleteFormElements.forEach(formElement => {
+            formElement.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const userConfirm = window.confirm('Are you sure you want to delete this comic?');
+                if (userConfirm){
+                    this.submit();
+                }
+            });
+        });
+    </script>
 @endsection

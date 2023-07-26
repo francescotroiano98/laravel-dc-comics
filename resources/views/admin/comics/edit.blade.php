@@ -2,8 +2,6 @@
 
 @section('title', 'Create Comic Page')
 
-@dump($comic->getAttributes())
-
 @section('main-content')
 <div class="container">
     <div class="row comics justify-content-around">
