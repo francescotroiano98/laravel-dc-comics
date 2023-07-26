@@ -53,7 +53,14 @@
                                 <a class="btn btn-sm btn-success me-2" href="{{ route('admin.comics.edit', $comic->id) }}">
                                     Edit
                                 </a>
-                                <a class="btn btn-sm btn-warning me-2">Delete</a>
+                                <form action="{{ route('admin.comics.destroy', $comic->id) }}" class="d-inline form-terminator" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+
+                                    <button type="submit" class="btn btn-sm btn-warning me-2">
+                                        Delete
+                                    </button>
+                                </form>
                             </td>
 
                         </tr>
